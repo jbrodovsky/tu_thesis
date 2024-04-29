@@ -1,2 +1,5 @@
-# tu_thesis
-PhD and Masters thesis LaTeX template for Temple University
+# Thesis Template for Temple University
+
+A simple and customizable PhD dissertation and Masters thesis LaTeX template for Temple University.
+
+There are numerous similar templates out there for various other schools. However, they are all very customized and very school specific. One thing that I do specifically like about Temple University's template is that it is very plain and generic. Easily reusable in other contexts. The mathematics department even provides a base LaTeX template! However, that as well as a few other repos out there are actually out of date and unmaintained with the current style guide. On top of the other examples I've found for specific TU implementations have been far too author/school/department specific. The goal with this project is to provide a truly generic implementation that can be used either for an M.S. or Ph.D. across any department or college within Temple, and at any other university as well, provided they follow Temple's style guide. If not, this should serve as an easily adaptable template class.
