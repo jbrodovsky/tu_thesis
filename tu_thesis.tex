@@ -1,0 +1,83 @@
+% main.tex
+\documentclass{thesis-dissertation}
+
+% Set thesis information
+\title{A Template for Theses and Dissertations}
+\author{James Brodovsky}
+\date{January 2025} % Graduation date specifically
+\copyrightyear{2025} % Copyright year, typically the same as graduation year
+\degree{Doctor of Philosophy} % Master of Science, Doctor of Philosophy, etc.
+\doctype{Dissertation} % Thesis, Dissertation, Praxis, etc. May also append with Proposal
+\advisor{Jane Doe}{Department of Mechanical Engineering}
+%\setcommittee{
+%  Dr. John Smith, Department of Computer Science\\
+%  Dr. Emily Davis, Department of Mechanical Engineering\\
+%  Dr. Robert Johnson, Department of Electrical Engineering
+%}
+\committeemember{John Smith}{Department of Computer Science}
+\committeemember{Emily Davis}{Department of Mechanical Engineering}
+\committeemember{Robert Johnson}{Department of Electrical Engineering}
+
+% Bibliography
+\usepackage[style=apa]{biblatex}
+\addbibresource{references.bib}
+
+% Begin Document
+\begin{document}
+
+% Title Page
+\maketitlepage
+
+% Abstract
+\begin{abstract}
+  This dissertation explores...
+\end{abstract}
+
+% Acknowledgments
+\begin{acknowledgments}
+I would like to thank...
+\end{acknowledgments}
+
+\begin{dedication}
+  To my family, friends, and colleagues who helped me along the way.
+\end{dedication}
+
+% Table of Contents
+\tableofcontents
+
+% List of Figures
+\listoffigures
+
+% List of Tables
+\listoftables
+
+% Chapters
+\chapter{My introduction}
+Introduction text here.
+\section{Background}
+Background text here.
+\subsection{Subsection}
+Subsection text here.
+
+\chapter{Literature Review}
+Literature review text here.
+
+\chapter{Methodology}
+Methodology text here.
+
+\chapter{Results and Discussion}
+Results and discussion text here.
+
+\chapter{Conclusion}
+Conclusion text here.
+
+% Bibliography
+\nocite{*}
+\printbibliography
+
+% Appendices
+\appendix
+\chapter{Additional Data}
+Additional data here.
+
+\end{document}
