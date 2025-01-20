@@ -13,6 +13,7 @@
 % \RequirePackage[]{biblatex}
 \RequirePackage{ifthen}
 \RequirePackage{etoolbox}
+\RequirePackage{graphicx}
 
 %% Geometry and Margins
 \geometry{
@@ -28,6 +29,10 @@
 %% Title and Document Information
 \newcommand{\mydegree}{\relax}
 \newcommand{\mydoctype}{\relax}
+\newcommand{\myuniversity}{\relax}
+\newcommand{\myschool}{\relax}
+\newcommand{\mydepartment}{\relax}
+\newcommand{\myorg}{\relax}
 \newcommand{\myadvisor}{\relax}
 \newcommand{\mycommitteemembers}{\relax}
 \newcommand{\mycopyrightyear}{}
@@ -40,6 +45,10 @@
     \g@addto@macro\myadvisor{#1, #2 (Advisor)\\}} 
 \newcommand{\committeemember}[2]{%
   \g@addto@macro\mycommitteemembers{#1, #2\\}}
+\newcommand{\university}[1]{\renewcommand{\myuniversity}{#1}}
+\newcommand{\school}[1]{\renewcommand{\myschool}{#1}}
+\newcommand{\department}[1]{\renewcommand{\mydepartment}{#1}}
+\newcommand{\graduateorg}[1]{\renewcommand{\myorg}{#1}}
 
 %% Title Page Command
 \newcommand{\maketitlepage}{%
@@ -50,9 +59,19 @@
     \bigskip 
     \hrulefill \\
     \bigskip 
-    A \doctype\\
-    Submitted to\\
-    Temple University Graduate Board\\
+    A \mydoctype\\
+    Submitted to the\\
+    \ifthenelse{\equal{\mydepartment}{\relax}}{}{%
+      \mydepartment \\
+    }
+    \ifthenelse{\equal{\myschool}{\relax}}{}{%
+      \myschool \\
+    }
+    \myuniversity{} 
+    \ifthenelse{\equal{\myorg}{\relax}}{}{
+      \myorg{}
+    }
+    \\
     \bigskip
     \hrulefill \\
     \bigskip

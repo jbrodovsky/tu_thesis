@@ -2,25 +2,30 @@
 \documentclass{thesis-dissertation}
 
 % Set thesis information
-\title{A Template for Theses and Dissertations}
+\title{A \LaTeX{} Template for Theses and Dissertations}
 \author{James Brodovsky}
-\date{January 2025} % Graduation date specifically
-\copyrightyear{2025} % Copyright year, typically the same as graduation year
-\degree{Doctor of Philosophy} % Master of Science, Doctor of Philosophy, etc.
-\doctype{Dissertation} % Thesis, Dissertation, Praxis, etc. May also append with Proposal
+\date{January 2025}             % Graduation date specifically
+\copyrightyear{2025}            % Copyright year, typically the same as graduation year
+\degree{Doctor of Philosophy}   % Master of Science, Doctor of Philosophy, etc.
+\doctype{Dissertation}          % Thesis, Dissertation, Praxis, etc. May also append with Proposal
+\university{Temple University}  % The name of your university
+\school{\relax}                 % School name, optional,  e.g. College of Engineering, College of Science and Technology
+\department{\relax}             % Department name, optional, e.g. Department of Mechanical Engineering
+\graduateorg{Graduate Board}    % Graduate Board, Graduate School, etc.
 \advisor{Jane Doe}{Department of Mechanical Engineering}
-%\setcommittee{
-%  Dr. John Smith, Department of Computer Science\\
-%  Dr. Emily Davis, Department of Mechanical Engineering\\
-%  Dr. Robert Johnson, Department of Electrical Engineering
-%}
 \committeemember{John Smith}{Department of Computer Science}
 \committeemember{Emily Davis}{Department of Mechanical Engineering}
 \committeemember{Robert Johnson}{Department of Electrical Engineering}
 
-% Bibliography
+%% Bibliography
+% BibLaTeX is a useful package for managing references. It is not strickly required, but it is recommended.
+% Specifically, the main use of BibLaTeX in this context is to permit the use of various citation styles.
+% To change citation style, simply change the `style=apa`' to the desired style (e.g. `style=ieee`, `style=mla`, et cetera).
 \usepackage[style=apa]{biblatex}
 \addbibresource{references.bib}
+
+% Dummy text used for demonstration and format testing purposes, comment out when writing your own text
+\usepackage{lipsum}
 
 % Begin Document
 \begin{document}
@@ -53,23 +58,56 @@ I would like to thank...
 
 % Chapters
 \chapter{My introduction}
-Introduction text here.
+Introduction text here. Cleverly reference \cite{doe2023example}.
+
+\lipsum[1-2]
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{example-image-a}
+  \caption{An example figure.}
+  \label{fig:example-image-a}
+\end{figure}
+
 \section{Background}
-Background text here.
+Background text here. Further illumination gained from \cite{johnson2021conference}.
+\lipsum[3-4]
+\begin{table}
+  \centering
+  \begin{tabular}{|c|c|c|}
+    \hline
+    A & B & C \\
+    \hline
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 8 & 9 \\
+    \hline
+  \end{tabular}
+  \caption{An example table.}
+  \label{tab:example-table}
+\end{table}
+
 \subsection{Subsection}
 Subsection text here.
+\lipsum[5-6]
 
 \chapter{Literature Review}
-Literature review text here.
+Literature review text here. A comprehesive review is found in \cite{smith2022sample}. 
 
 \chapter{Methodology}
 Methodology text here.
 
+\lipsum[7-8]
+
 \chapter{Results and Discussion}
 Results and discussion text here.
 
+\lipsum[9-10]
+
 \chapter{Conclusion}
 Conclusion text here.
+
+\lipsum[11-12]
 
 % Bibliography
 \nocite{*}
