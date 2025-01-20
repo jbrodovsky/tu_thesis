@@ -16,8 +16,13 @@ The goals of this project are simple:
 
 ## Features
 
-- Simple and clean LaTeX template allowing specification of the degree type, department, college, and university
+- Simple and clean `LaTeX` template allowing specification of the degree type, department, college, and university
 - Automatic formating of the committee members and their roles through the `\advisor` and `\committeemember` commands
 - Automatic generation of the title page, abstract, acknowledgements, and table of contents, list of figures, and list of tables
 - Automatic formatting of the bibliography and citations using BibTeX
-  
+
+## Usage
+
+1. Install your favorite `LaTeX` distribution. I recommend [TeX Live](https://www.tug.org/texlive/) as that is what I use and this was built against. Its a behomoth, but it has everything you need.
+2. Clone this repository or download the ZIP file and extract it to a directory of your choice.
+3. Open `tu_thesis.tex` in your favorite LaTeX editor and start writing your thesis or dissertation!
