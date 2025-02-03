@@ -67,10 +67,7 @@
     \ifthenelse{\equal{\myschool}{\relax}}{}{%
       \myschool \\
     }
-    \myuniversity{} 
-    \ifthenelse{\equal{\myorg}{\relax}}{}{
-      \myorg{}
-    }
+    \myuniversity{} \ifthenelse{\equal{\myorg}{\relax}}{}{\myorg{}}
     \\
     \bigskip
     \hrulefill \\
@@ -92,7 +89,8 @@
   \newpage
 
 % Copyright
-\newpage
+%\newpage
+\chapter*{} % Blank starred chapter commands are use to get the base page formatting correct
 \vspace*{\fill}
 \begin{center}
     \copyright \\
@@ -107,9 +105,18 @@
 \newpage
 }
 
+%% Abstract
+\renewenvironment{abstract}{
+  \chapter*{Abstract}
+  \addcontentsline{toc}{chapter}{Abstract}
+}{
+  \newpage
+}
+
 %% Acknowledgments
 \newenvironment{acknowledgments}{
   \chapter*{Acknowledgments}
+  \addcontentsline{toc}{chapter}{Acknowledgments}
 }{
   \newpage
 }
@@ -117,8 +124,8 @@
 %% Dedication Command
 % Dedication environment should be on a new page, centered vertically and horizontally, and double spaced
 \newenvironment{dedication}{
-  \newpage
-  \thispagestyle{empty}
+  \chapter*{}
+  \addcontentsline{toc}{chapter}{Dedication}
   \vspace*{\fill}
   \begin{center}
 }{
@@ -127,28 +134,33 @@
   \newpage
 }
 
-
-
 %% Bibliography Integration
 % \addbibresource{references.bib}
 
 %% Custom Sectioning
 \titleformat{\chapter}[display]
   {\normalfont\bfseries\filcenter}{\chaptername~\thechapter}{20pt}{\Large}
-
-\renewcommand{\thesection}{\arabic{section}}
+\titleformat{\section}
+  {\normalfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\bfseries\itshape}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\bfseries}{\thesubsubsection}{}{}%{\titlecase{#1}.}
+\titleformat{\paragraph}[runin]
+  {\normalfont\bfseries\itshape}{\theparagraph}{}{}%{\titlecase{#1}.}
 
 %% Page Headers and Footers
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[LO]{\doctype}
-\fancyhead[RE]{\thesistitle}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[LE,RO]{\thepage}
+% \fancyhead[LO]{\doctype}
+% \fancyhead[RE]{\thesistitle}
 
 
 \AtBeginDocument{
-  \pagenumbering{arabic} %% Front matter roman numerals
+  \pagenumbering{roman} %% Front matter roman numerals
 }
 
 %% Begin the document
+\pagestyle{plain}
 \endinput
