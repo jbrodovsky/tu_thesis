@@ -3,18 +3,18 @@
 
 % Set thesis information
 \title{A \LaTeX{} Template for Theses and Dissertations}
-\author{James Brodovsky}
+\author{Paul H Davis}
 \date{January 2025}             % Graduation date specifically
 \copyrightyear{2025}            % Copyright year, typically the same as graduation year
 \degree{Doctor of Philosophy}   % Master of Science, Doctor of Philosophy, etc.
 \doctype{Dissertation}          % Thesis, Dissertation, Praxis, etc. May also append with Proposal
 \university{Temple University}  % The name of your university
-\school{\relax}                 % School name, optional,  e.g. College of Engineering, College of Science and Technology
+\school{\relax}                 % School name, optional,  e.g. College of Engineering, College of Science and Technology, Medical School, Law School
 \department{\relax}             % Department name, optional, e.g. Department of Mechanical Engineering
 \graduateorg{Graduate Board}    % Graduate Board, Graduate School, etc.
 \advisor{Jane Doe}{Department of Mechanical Engineering}
 \committeemember{John Smith}{Department of Computer Science}
-\committeemember{Emily Davis}{Department of Mechanical Engineering}
+\committeemember{Emily Black}{Department of Mechanical Engineering}
 \committeemember{Robert Johnson}{Department of Electrical Engineering}
 
 %% Bibliography
@@ -35,32 +35,37 @@
 
 % Abstract
 \begin{abstract}
-  This dissertation explores...
+  This dissertation explores many things. It is a very important work. It is very long and very detailed. It is very well written. It is very well researched. It is very well cited. It is very well formatted. It is very well defended. It is very well received. It is very well published. It is very well read.
 \end{abstract}
 
 % Acknowledgments
 \begin{acknowledgments}
-I would like to thank...
+I would like to thank many people for their help and support. I would like to thank my advisor for their guidance. I would like to thank my committee members for their feedback. I would like to thank my family for their love and support. I would like to thank my friends for their encouragement. I would like to thank my colleagues for their assistance. I would like to thank my university for their resources. I would like to thank my funding sources for their support. I would like to thank my publisher for their interest. I would like to thank my readers for their attention. I would like to thank everyone who helped me along the way.
 \end{acknowledgments}
 
 \begin{dedication}
-  To my family, friends, and colleagues who helped me along the way.
+  To my family, friends, and colleagues who helped me along the way. Some were there from the beginning, some joined along the way, and some came in at the end. All were important. All were appreciated. All were loved.
 \end{dedication}
 
+% Table of Contents, List of Figures, List of Tables
+\singlespacing
 % Table of Contents
 \tableofcontents
-
 % List of Figures
 \listoffigures
-
 % List of Tables
 \listoftables
+
+% Main Body
+\newpage{}
+\pagenumbering{arabic}
+\doublespacing
 
 % Chapters
 \chapter{My introduction}
 Introduction text here. Cleverly reference \cite{doe2023example}.
 
-\lipsum[1-2]
+\lipsum[1-2] % Dummy text
 
 \begin{figure}
   \centering
@@ -69,7 +74,7 @@ Introduction text here. Cleverly reference \cite{doe2023example}.
   \label{fig:example-image-a}
 \end{figure}
 
-\section{Background}
+\section*{Background}
 Background text here. Further illumination gained from \cite{johnson2021conference}.
 \lipsum[3-4]
 \begin{table}
@@ -87,12 +92,32 @@ Background text here. Further illumination gained from \cite{johnson2021conferen
   \label{tab:example-table}
 \end{table}
 
-\subsection{Subsection}
-Subsection text here.
+\subsection*{Subsection: This heading should be Flush Left, Boldface, and Title Case.}
+Subsection text here. It should be indented at the start of a new paragraph. \\
 \lipsum[5-6]
 
+\subsubsection{Subsubsection: This heading should be Flush Left, Boldface Italic, and Title Case.}
+Subsubsection text here and should be indented at the start of a new paragraph. \\
+\lipsum[7-8].
+
+\subsubsection{}
+
 \chapter{Literature Review}
-Literature review text here. A comprehesive review is found in \cite{smith2022sample}. 
+Literature review text here. A comprehesive review is found in \cite{smith2022sample}. \lipsum[1-2].
+
+\section{Section: This heading should be Flush Left, Boldface, and Title Case.}
+asdfasfasd
+
+\subsection{Subsection: This heading should be Flush Left, Boldface, and Title Case.}
+
+\lipsum[3-4]
+
+\subsubsection{Subsubsection: Indented, Boldface, Title Case Heading Ending with a Period.}
+Paragraph text continues on the same line of the paragraph.
+
+\paragraph{Subsubsubsection: Indented, Italic, Title Case Heading Ending with a Period.} \lipsum[5-6]
+
+\paragraph[An alternative]{Paragraph text is in here.} \lipsum[5-6]
 
 \chapter{Methodology}
 Methodology text here.
@@ -117,5 +142,6 @@ Conclusion text here.
 \appendix
 \chapter{Additional Data}
 Additional data here.
-
+\chapter{Supplementary Information}
+Supplementary information here.
 \end{document}
