@@ -11,7 +11,7 @@ On top of that, the other examples I've found for specific TU implementations ha
 
 The goals of this project are simple:
 
-1. Provide a truly generic implementation of a $\latex$ document template that can be used either for a Master's thesis or Ph.D. dissertation across any department or college within Temple
+1. Provide a truly generic implementation of a LaTeX document template that can be used either for a Master's thesis or Ph.D. dissertation across any department or college within Temple
 2. Optionally, at any other university as well, provided they follow Temple's style guide or something similar. Failing that, this should serve as an easily adaptable template class that can be forked.
 
 ## Features
