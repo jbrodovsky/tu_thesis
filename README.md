@@ -26,3 +26,15 @@ The goals of this project are simple:
 1. Install your favorite `LaTeX` distribution. I recommend [TeX Live](https://www.tug.org/texlive/) as that is what I use and this was built against. Its a behomoth, but it has everything you need.
 2. Clone this repository or download the ZIP file and extract it to a directory of your choice.
 3. Open `tu_thesis.tex` in your favorite LaTeX editor and start writing your thesis or dissertation!
+
+## Alternative Usage
+
+Another advantage of using LaTeX over WISWIG text editors (e.g. Word) is that plain text is easily version controlled. This means you can use Git to track changes to your document over time. This is especially useful for large documents like theses and dissertations, where you may want to revert to a previous version or see how your document has changed over time. It also allows for updated to the formating (e.g. the `.cls` file) to be seperately modified and updated without having to worry about breaking the document itself.
+
+To use in this manner I suggest the following:
+
+1. Fork this repository to your own GitHub account
+2. Clone the repository to your local machine
+3. Create a new branch for your changes
+
+The fork should still permit you to pull in upstream changes from the original repository. This way you can keep your fork up to date with the latest changes and improvements to the template.
