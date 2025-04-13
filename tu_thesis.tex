@@ -3,8 +3,8 @@
 
 % Set thesis information
 \title{A \LaTeX{} Template for Theses and Dissertations}
-\author{Paul H Davis}
-\date{January 2025}             % Graduation date specifically
+\author{James Brodovsky}        % Your name!
+\date{April 2025}               % Graduation date specifically, Month and Year
 \copyrightyear{2025}            % Copyright year, typically the same as graduation year
 \degree{Doctor of Philosophy}   % Master of Science, Doctor of Philosophy, etc.
 \doctype{Dissertation}          % Thesis, Dissertation, Praxis, etc. May also append with Proposal
@@ -18,68 +18,190 @@
 \committeemember{Robert Johnson}{Department of Electrical Engineering}
 
 %% Bibliography
-% BibLaTeX is a useful package for managing references. It is not strickly required, but it is recommended.
+% BibLaTeX is a useful package for managing references. It is not strictly required, but it is recommended.
 % Specifically, the main use of BibLaTeX in this context is to permit the use of various citation styles.
 % To change citation style, simply change the `style=apa`' to the desired style (e.g. `style=ieee`, `style=mla`, et cetera).
 \usepackage[style=apa]{biblatex}
 \addbibresource{references.bib}
-
 % Dummy text used for demonstration and format testing purposes, comment out when writing your own text
 \usepackage{lipsum}
-
-% Begin Document
+% Hyperlinks package for clickable links in the PDF
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  filecolor=magenta,
+  urlcolor=blue,
+  citecolor=black,
+  pdftitle={A \LaTeX{} Template for Theses and Dissertations},
+  pdfauthor={James Brodovsky},
+}
+%% Begin Document
 \begin{document}
+%% Theorem-style environment definitions
+\newtheorem{notation}{Notation}[chapter]
+\newtheorem{rem}{Remark}[chapter]
+\newtheorem{lem}{Lemma}[chapter]
+\newtheorem{cor}{Corollary}[chapter]
+\newtheorem{tem}{Theorem}[chapter]
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{example}{Example}[chapter]
+\newtheorem{define}{Definition}[chapter]
 
-% Title Page
-\maketitlepage
+%% Title Page
+\maketitlepage{}
 
-% Abstract
+%% Abstract
 \begin{abstract}
-  This dissertation explores many things. It is a very important work. It is very long and very detailed. It is very well written. It is very well researched. It is very well cited. It is very well formatted. It is very well defended. It is very well received. It is very well published. It is very well read.
+  This is a template for writing a thesis or dissertation using \LaTeX{}. It is designed to help you create a document that meets the formatting requirements of your university. The template includes examples of how to format various sections of your document, including the title page, abstract, acknowledgments, table of contents, list of figures, list of tables, and main body. It also includes examples of how to format figures, tables, equations, and references. This template is intended to be a starting point for your thesis or dissertation and can be customized to meet your specific needs.
 \end{abstract}
 
-% Acknowledgments
+%% Acknowledgments
 \begin{acknowledgments}
-I would like to thank many people for their help and support. I would like to thank my advisor for their guidance. I would like to thank my committee members for their feedback. I would like to thank my family for their love and support. I would like to thank my friends for their encouragement. I would like to thank my colleagues for their assistance. I would like to thank my university for their resources. I would like to thank my funding sources for their support. I would like to thank my publisher for their interest. I would like to thank my readers for their attention. I would like to thank everyone who helped me along the way.
+  Leslie Lamport, for making \LaTeX{} possible.
+  James Yu for creating the fantastic LateX Workshop Visual Studo Code extension.
+  The Mathematics department of Temple University, for at, the very least, inspiring me to do this.
 \end{acknowledgments}
 
+%% Dedication
 \begin{dedication}
-  To my family, friends, and colleagues who helped me along the way. Some were there from the beginning, some joined along the way, and some came in at the end. All were important. All were appreciated. All were loved.
+  To any and everyone who needs this.
 \end{dedication}
 
-% Table of Contents, List of Figures, List of Tables
-\singlespacing
-% Table of Contents
-\tableofcontents
-% List of Figures
-\listoffigures
-% List of Tables
-\listoftables
+%% Table of Contents, List of Figures, List of Tables
+\singlespacing{}
+%% Table of Contents
+\tableofcontents{}
+%% List of Figures
+\listoffigures{}
+%% List of Tables
+\listoftables{}
 
-% Main Body
+%% Main Body
 \newpage{}
 \pagenumbering{arabic}
-\doublespacing
+\doublespacing{}
 
-% Chapters
-\chapter{My introduction}
-Introduction text here. Cleverly reference \cite{doe2023example}.
+%% Chapters
+\chapter{Introduction}
+\LaTeX{} is a typesetting system that is widely used for producing scientific and technical documents. It is particularly well-suited for documents that contain complex mathematical equations, tables, and figures, but it is also useful for documents that need to seperate out content from formatting. This template (provided in the accompanying \texttt{.cls} file) is designed to help you create a thesis or dissertation that meets the formatting requirements of your university, and is specifically tailored to the style guide of Temple University. This file (\texttt{thesis-dissertation.cls}) defines the \texttt{thesis-dissertation} class, which is a drop-in replacement for the standard \LaTeX{} classes and builds off the built-in \texttt{report} class, which is used primarily for it's numbering rules for things like equations and for the abstract environment.
 
-\lipsum[1-2] % Dummy text
+Because of how \LaTeX{} works, this template is effectively in two parts: the class definition and this example implementation. This file is effectively a tutorial and a sort of boot-strapped example. In the same way that compilers for programming languages are often written in the same language they compile, this document is an example of the formatting and structure of a thesis or dissertation and will both document and demonstrate how to us the unique features of the class and how to use \LaTeX{} in general. Consider it both an introduction to the class and a light-weight tutorial on how to use \LaTeX{}.
 
-\begin{figure}
+In general, you should not need to modify the class file in order to use this. It is designed to be a drop-in replacement for the standard \LaTeX{} classes, but with the added benefit of having a template that meets the formatting requirements. Only delve into the class file if you need to make changes to the formatting that are not covered by the options in this file.
+
+Additionally, this tutorial is set up with \textit{minimal} dependencies. It is designed and intended to be as simple as possible. The additional packages used are noted in the imports section with specific comments about what they are used for in this tutorial. Feel free to remove them when starting your own document. Everything you need formatting-wise is contained in the class file, and for illustration purposes in this file there are references contained in \verb|references.bib|. 
+
+For instance, you've probably noticed some coloration or highlighting over certain words (namely in the table of contents). This is done with the \texttt{hyperref} package and is primarily used in this document to make URL links accessible by imbedding them in the text as hyper references (like a typical web page). It also has the added benefit of making clickable links to sections, figures, and other such items in the document. While links are not expressely prohibited by the style guide, you should be careful of how it formats the text. Namely, it can color links to something other than black which is the only permitted font color. For the sake of this document, that will be the one exception made to the prescribed style guide.
+\chapter{Background}
+\section{Why?}
+There are numerous similar templates out there for various other schools. However, they are all very customized and very school specific. One thing that I do specifically like about Temple University's template is that it is very plain and generic and easily reusable in other contexts. The mathematics department even provides a base \href{https://cst.temple.edu/department-mathematics/graduate/current-students/tu-thesis}{\LaTeX{} template}! However, that version does not appear to be actively maintained, is internally inconsistent, and out of date with the current \href{https://grad.temple.edu/resources/dissertation-thesis-handbook}{handbook}. There are a few other repos out there that have attempted to tackle this, but they too are actually out of date and unmaintained with the current style guide. On top of that, the other examples I've found for specific TU implementations have been far too author, school, or department specific and would be cumbersome to adapt.
+\section{Goals}
+The goals of this project are simple. One, provide a truly generic implementation of a LaTeX document template that can be used either for a Master's thesis or Ph.D. dissertation across any department or college within Temple. Two, optionally at any other university as well, provided they follow Temple's style guide or something similar. Failing that, this should serve as an easily adaptable template class that can be forked.
+
+In addition to those general project goals, this tutorial is also intended to be a sort of introduction to \LaTeX{} and how to use it. It is not intended to be a comprehensive guide, but rather a starting point for those who are either new to \LaTeX{} and don't require much in the way of advanced typesetting, just something that meets the style guide and is useful for large documents with cross-references and citations, or advanced users who know their way around who are looking for a simple template to use and need a simple primer.
+
+\section{Some General Usage Notes}
+This template and tutorial was built using the TeXLive distribution of \LaTeX{} and the Visual Studio Code editor with the \texttt{LateX Workshop} extension. It is not neccessarily recommended that you too use that specific configuration, but it is the one that this is being built with and tested against. If you use something else (say MikTex and TexStudio for example) and are getting weird bugs, then I can't help you. I have used my TexLive installation with TexStudio and it works fine, but I have not tested this template with it. 
+
+I use this configuration because VS Code is heavily integrated into my workflow as a roboticist. I write code, a lot, so writing my papers in my code editor is what is the most useful for me. Additionally, VS Code has nice Git (soure code management) integration which allows for changes to be tracked. This is similar to the ``Track Changes'' feature in many word processors (namely Microsoft Word) that many users may be familiary with. Using plain text and Git differs in that it will be able to track things like changes to your equation definitions. You won't have to convert back to linear mode, make the change and then re-render. Personally, I do not find the version control aspect a particularly compelling argument for people who do not already know how to and use Git in their workflow. However, it is a nice feature to have if you are already using it.
+
+With that said, I have some additional recommenations for setting up Visual Studio Code for \LaTeX{} editing. Noteably, the \href{https://marketplace.visualstudio.com/items/?itemName=James-Yu.latex-workshop}{LaTeX Workshop extension} comes with \texttt{chktex} a \LaTeX{} linter that will check your document for common mistakes. As anyone who is mildly familiary with \LaTeX{} knows, whatever program you're using frequently will spit out a lot of warnings about things despite rendering your document completely correctly as you intended. Underfull hbox anyone? Frankly its one of the things that I dislike about \LaTeX{} and why I prefer to use Markdown for most of my writing now. However, \LaTeX{} is still the gold standard for typesetting and formatting formal documents, especially in academia and scientific research. So we use it even if it means we keep cursing at it. Eventually something will come along that is both compatible and better.
+
+Anyway, open your settings in VS Code and search for ``chktex''. Find the section ``Latex-workshop>Linting>Chktex>Exec:Args''. At time of writing this is the fourth item down. I would add the following arguments to the list: -n2, -n8, -n12, -n24, and -n38. I recommend these because, like markdown, I want to keep the source code text and the rendered product as simple, straightforward, and as similar as possible. If I put a space between items in the code, I would like there to be a space. I don't want to have to explicitly use a tilde.
+
+\texttt{-n2} suppress the non-breaking space warning. This frequently comes up with references and citations in text. For example if I cite \cite{doe2023example} as such, this works and looks correct. In the code this is written as:\begin{center}\begin{verbatim}...\verb|if I cite \cite{doe2023example}|...\end{verbatim}\end{center}\verb|chktex| will complain about the space between ``cite'' and the \verb|\cite| command. I don't really know why but removing that space renders the document as such: \begin{center}
+``\ldots if I cite\cite{doe2023example}\ldots''. 
+\end{center} This is not what I want. I want the space to be there. To a certain extent I get this, the code is being rendered precisely where you tell it to be rendered in the text, however \LaTeX{} doesn't do well with intentional white space. So I add \texttt{-n2} to the list of arguments to suppress that warning and either include or exclude the space between the citation and the text as per the style guide of whatever document I'm writing. For dissertations and theses (and this example) they follow the APA style guide which uses the Name, Year scheme and requires a space between the citation and the text. The bracketed number IEEE style does not require a space.
+
+\texttt{-n8} suppresses the warning about potentially incorrect hyphen usages. Some packages (namely the \texttt{lipsum} dummy text package) will allow you to specifiy ranges, lists, bounds et cetera in the bracketed parameters block, e.g.: \verb|libsum[1-3]|. \LaTeX{} however will complain about this as it doesn't know if this is some sort of code parameter, a hyphen between works (e.g.: ``co-ordinate''), or an emdash (this thing: ---, the fancy long dash). These are pretty distinct in code, particularly the emdash: \verb|---|. 
+
+\texttt{-n12} similarly suppresses interword spacing warnings with \verb|`\ '|. Again, if I want a space, I want a space.
+
+\texttt{-n24} suppresses the warning spaces in labels and captions for figures and tables. I've never actually seen an issue caused by this space being there. For example in the following snippet:\begin{verbatim}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image-a}
+    \caption{An example figure.}
+    \label{fig:example-image-a}
+  \end{figure}\end{verbatim}\texttt{chktex} will complain about the space (indentation) in front of \verb|label| yet this renders and is captioned and cross-referenced correctly.
+
+\texttt{-n38} suppresses the warning about puntuation in front of quotes. I have no idea why this is a problem.
+\chapter{Methods}
+
+In this chapter, we'll discuss the specific style guidelines and to use the template formatting and built in \LaTeX{} features in a way that aligns with the style guide. For starters, you cant take a look at the front matter of this document. The class inherits the \texttt{abstract} environment from the \texttt{report} class and modifies it a bit to be centered horizontally and vertically on the page. New environments that do the same thing are created for the ``Acknowledgments'' and ``Dedication'' sections. 
+
+Also take a look at the preamble portion of the the \LaTeX{} source code. There you will find several self-explanitory commands that set certain variables in the class. These, when combined with the typical \texttt{maketitle} command, will generate the title page and copyright page.
+
+Everything else is handled with built in commands. The class definition provides the formatting of sections headers appropriately. The style guide provides for five levels of headings. All headings are numbered (e.g. Chapter 4, Section 4.1) with appendix level 1 headings lettered (e.g. Appendix A). The style guide permits two different heading styles, APA style which is available to every discipline, and ``hard sciences'' style. For the sake of appealling to the broadest possible group and not making this over hard, the APA style was selected. These headings are accessed via the commands shown in Table \ref{tab:heading-styles}. Individual authors can choose to number or not number subsections using the asteriks verions of the section commands.
+\begin{table}[ht]
+  \centering
+  \caption{Heading styles and their descriptions. Table captions preceed the table.}
+  \begin{tabular}{|c|c|l|}
+    \hline
+    \textbf{Level} & \textbf{Command} & \textbf{Description} \\
+    \hline
+    1 & \verb|\chapter{}| & Chapter heading; Centered, Boldface, title case. \\
+    2 & \verb|\section{}| & Section heading; flush left, boldface, title case. \\
+    3 & \verb|\subsection{}| & Subsection heading; flush left, boldface italic, title case. \\
+    4 & \verb|\subsubsection{}| & Subsubsection heading; indented, boldface, title case. \\
+    5 & \verb|\paragraph{}| & Paragraph heading; indented, boldface italic, title case. \\
+    \hline
+  \end{tabular}
+  \label{tab:heading-styles}
+\end{table}
+
+\section{Bibliography and Citations}
+\LaTeX{} is great for managing citation. In the preamble portion of the source code you'll see the following two lines: \begin{center}
+  \verb|\usepackage[style=apa]{biblatex}| \\
+  \verb|\addbibresource{references.bib}|
+\end{center} 
+
+The style can be set to any style supported by \texttt{biblatex} (e.g. ``ieee''). The \texttt{references.bib} file is a BibTeX file that contains the references for the document. You can add your own references to this file, and \LaTeX{} will automatically generate the bibliography for you.
+
+\section{Block quotes}
+
+Sometimes, you need to quote a very long passage of text. In this case, you can use the \texttt{quotation} and \texttt{singlespace} environments. This will indent the text and set it in a different font size. For example, the following code: \begin{singlespace}\begin{verbatim}
+  \begin{quotation}
+    \begin{singlespace}
+      This is a quote from a paper. It should be indented. It should 
+      be single spaced. It should not have quotation marks. This is 
+      an example of how to format a very long quote of forty or more 
+      words in LaTeX.
+      \begin{flushright}
+        \cite{doe2023example}
+      \end{flushright}
+    \end{singlespace}
+  \end{quotation}
+\end{verbatim}
+\end{singlespace}
+Will produce the following quotation when compiled:\begin{quotation}\begin{singlespace}This is a quote from a paper. It should be indented. It should be single spaced. It should not have quotation marks. This is an example of how to format a very long quote of forty or more words in LaTeX.\begin{flushright}\cite{doe2023example}\end{flushright}
+\end{singlespace}\end{quotation}
+
+\section{Figures and Tables}
+Figures are created using the \texttt{figure} environment along with the \texttt{includegraphics} command which is included in the class definition which requires the \texttt{graphicx} package. Figures, like tables as we've seen before are centered on the page and include a caption. Figures are captioned below the image, tables above the table. The following code produces a figure from an image file \texttt{example-image-a}. You can point \LaTeX{} to a source directory or include the file path. You don't need to include the file extension.
+\begin{singlespace}
+  \begin{verbatim}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image-a}
+    \caption{An example figure.}
+    \label{fig:example-image-a}
+  \end{figure}
+\end{verbatim}
+\end{singlespace}
+
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{example-image-a}
   \caption{An example figure.}
   \label{fig:example-image-a}
 \end{figure}
 
-\section*{Background}
-Background text here. Further illumination gained from \cite{johnson2021conference}.
-\lipsum[3-4]
-\begin{table}
+Sometimes, and rather notoriously, figures and tables don't really appear where you want them, or where they are relative to other things in the source code. For instance TAble \ref{tab:example-table} is defined after this paragraph in the source code. \LaTeX{} will always take care of the typesetting and placement, but you can cajole it to place things like tables, figures, et cetera where you define them by using the \texttt{ht} option: \verb|\begin{figure}[ht]| or \verb|\begin{table}[ht]|.
+ \begin{table}
   \centering
-  \begin{tabular}{|c|c|c|}
+  \begin{tabular}{|c|c|c|} % can be (c)enter, (l)eft, or (r)ight
     \hline
     A & B & C \\
     \hline
@@ -92,56 +214,64 @@ Background text here. Further illumination gained from \cite{johnson2021conferen
   \label{tab:example-table}
 \end{table}
 
-\subsection*{Subsection: This heading should be Flush Left, Boldface, and Title Case.}
-Subsection text here. It should be indented at the start of a new paragraph. \\
-\lipsum[5-6]
+\section{Definitions, Lemmas, and Theorems}
+Some disciplines, namely mathematics and physics, like to make use of specific formal acknowledgement for things like lemmas, propositions, definitions, notations, and the like. For example something like this: \begin{notation} We can make note of how we use symbols. \label{note:example}\end{notation} and we can even cross-references them such ``Recall Notation \ref{note:example}.'' These are defined as environments (e.g. \verb|\begin{notation}|) using the \verb|\newtheorem| command: \begin{singlespace}
+\begin{verbatim}
+\newtheorem{notation}{Notation}[chapter]
+\newtheorem{rem}{Remark}[chapter]
+\newtheorem{lem}{Lemma}[chapter]
+\newtheorem{cor}{Corollary}[chapter]
+\newtheorem{tem}{Theorem}[chapter]
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{example}{Example}[chapter]
+\newtheorem{define}{Definition}[chapter]
+\end{verbatim}
+\end{singlespace} This will create a new environment for each of these items. The \verb|[chapter]| option will number them according to the chapter they are in. For example, the first lemma in Chapter 2 will be numbered ``Lemma 2.1'' and the second will be ``Lemma 2.2''. The first lemma in Chapter 3 will be ``Lemma 3.1'' and so on.
+\section{Equations}
+Equations are created using the \texttt{equation} environment. This will automatically number the equation for you. For example, the following code: \begin{singlespace}
+  \begin{verbatim}  
+  \begin{equation}
+    E = mc^2
+    \label{eq:example}
+  \end{equation}
+  \end{verbatim}\end{singlespace} Will produce the following equation when compiled: \begin{equation}
+  E = mc^2
+  \label{eq:example}
+\end{equation} This will automatically number the equation for you. You can reference the equation using the \verb|\ref| command. For example, Equation \ref{eq:example} is an example of an equation.
 
-\subsubsection{Subsubsection: This heading should be Flush Left, Boldface Italic, and Title Case.}
-Subsubsection text here and should be indented at the start of a new paragraph. \\
-\lipsum[7-8].
-
-\subsubsection{}
-
-\chapter{Literature Review}
-Literature review text here. A comprehesive review is found in \cite{smith2022sample}. \lipsum[1-2].
-
+\section{Conclusions}
+Other than the specific environment instances noted in this chapter, everything else is automatically formatted for you. This formating is demonstrated in the the next chapter.
+\chapter{Headings examples}
 \section{Section: This heading should be Flush Left, Boldface, and Title Case.}
-asdfasfasd
-
-\subsection{Subsection: This heading should be Flush Left, Boldface, and Title Case.}
-
-\lipsum[3-4]
+This is a section heading. It should be flush left, boldface, and title case. The text should be indented at the start of a new paragraph, but not for the first paragraph in the section. The class template automattically takes care of the title case for you. The following words are excluded based on APA suggestions. 
+\begin{itemize}
+  \item \textbf{Articles}: a, an, the
+  \item \textbf{Prepositions}: as, at, an, by, for, in, of, off, on, per, to, up, via
+  \item \textbf{Conjunctions}: and, as, but, for, if, nor, or, so, yet
+  \item \textbf{``Be'' verbs}: be, am, is, are, was
+\end{itemize}
 
 \subsubsection{Subsubsection: Indented, Boldface, Title Case Heading Ending with a Period.}
-Paragraph text continues on the same line of the paragraph.
+Paragraph text continues on the same line of the paragraph. Period should be included in the subsection title within the curly bracketss.
 
-\paragraph{Subsubsubsection: Indented, Italic, Title Case Heading Ending with a Period.} \lipsum[5-6]
+\paragraph{Subsubsubsection: Indented, Italic, Title Case Heading Ending with a Period.} The paragraph text continues on the same line as the heading. This heading is access via the \verb|\paragraph| command. Again, the period should explicitly be included in the title contained within the curly brackets.
 
-\paragraph[An alternative]{Paragraph text is in here.} \lipsum[5-6]
+%% Bibliography
+% \nocite{*}
+\printbibliography{}
 
-\chapter{Methodology}
-Methodology text here.
-
-\lipsum[7-8]
-
-\chapter{Results and Discussion}
-Results and discussion text here.
-
-\lipsum[9-10]
-
-\chapter{Conclusion}
-Conclusion text here.
-
-\lipsum[11-12]
-
-% Bibliography
-\nocite{*}
-\printbibliography
-
-% Appendices
+%% Appendices
 \appendix
-\chapter{Additional Data}
-Additional data here.
-\chapter{Supplementary Information}
-Supplementary information here.
+\renewcommand\chaptername{Appendix} % Converts from Chapter A to Appendix A
+\chapter{Appendix Formatting}
+Appendicies are for including additional material that is not essential to the main body of the document, but is still relevant. This can include things like additional figures, tables, or code snippets. Appendices are numbered with letters (e.g. A, B, C, etc.) and are formatted like chapters. The \verb|\appendix| command will automatically change the chapter numbering to letters. To change the chapter names from ``chapter'' to ``appendix'' use \verb|\renewcommand{\chaptername}{Appendix}|. This line is included in the source template file right after the \verb|\appendix| command.
+\section{Appendix Section}
+Appendices can have sections, subsections, and subsubsections just like the main body of the document. The only difference is that the chapter number is replaced with a letter (e.g. A, B, C, etc.). The section numbers are still numbered as they are in the main body of the document (e.g. A.1, A.2, etc.).
+\subsection{Appendix Subsection}
+Appendix subsections are numbered as they are in the main body of the document (e.g. A.1.1, A.1.2, etc.).
+\subsubsection{Appendix Subsubsection.}
+Appendix subsubsections are like this.
+\paragraph{Appendix Subsubsubsection.}
+Appendix susubsubsections again use the paragraph command.
+
 \end{document}
