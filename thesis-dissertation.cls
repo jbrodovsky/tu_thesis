@@ -14,6 +14,9 @@
 \RequirePackage{ifthen}
 \RequirePackage{etoolbox}
 \RequirePackage{graphicx}
+%% Title case settings
+\RequirePackage{titlecaps}
+\Addlcwords{a an the as at an by for in of off on per to up via and as but for if nor or so yet be am is are was}
 
 %% Geometry and Margins
 \geometry{
@@ -138,16 +141,25 @@
 % \addbibresource{references.bib}
 
 %% Custom Sectioning
-\titleformat{\chapter}[display]
-  {\normalfont\bfseries\filcenter}{\chaptername~\thechapter}{20pt}{\Large}
+% \titleformat{command}{format}{label}{sep}{before-code}
+\titleformat{\chapter}[block]
+  {\bfseries\filcenter\Large}
+  {\chaptername~\thechapter}
+  {.5em}
+  {\titlecap}
+%\bfseries\filcenter\Large
 \titleformat{\section}
-  {\normalfont\bfseries}{\thesection}{1em}{}
+  {\normalfont\bfseries}{\thesection}{1em}{\titlecap}
 \titleformat{\subsection}
-  {\normalfont\bfseries\itshape}{\thesubsection}{1em}{}
+  {\normalfont\bfseries\itshape}{\thesubsection}{1em}{\titlecap}
 \titleformat{\subsubsection}[runin]
-  {\normalfont\bfseries}{\thesubsubsection}{}{}%{\titlecase{#1}.}
+  {\normalfont\bfseries}{\quad\thesubsubsection}{}{\titlecap}%{\titlecase{#1}.}
+\titlespacing{\subsubsection}
+  {\parindent}{*1}{*1}
 \titleformat{\paragraph}[runin]
-  {\normalfont\bfseries\itshape}{\theparagraph}{}{}%{\titlecase{#1}.}
+  {\normalfont\bfseries\itshape}{\quad\theparagraph}{}{\titlecap}%{\titlecase{#1}.}
+\titlespacing{\paragraph}
+  {\parindent}{*1}{*1}
 
 %% Page Headers and Footers
 % \pagestyle{fancy}
