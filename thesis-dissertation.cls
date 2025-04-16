@@ -9,10 +9,7 @@
 \RequirePackage{geometry}
 \RequirePackage{titlesec}
 \RequirePackage{setspace}
-\RequirePackage{fancyhdr}
-% \RequirePackage[]{biblatex}
 \RequirePackage{ifthen}
-\RequirePackage{etoolbox}
 \RequirePackage{graphicx}
 
 %% Geometry and Margins
