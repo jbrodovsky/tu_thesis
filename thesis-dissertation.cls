@@ -7,12 +7,12 @@
 
 %% Packages
 \RequirePackage{geometry}
-\RequirePackage{titlesec}
-\RequirePackage{setspace}
-\RequirePackage{ifthen}
 \RequirePackage{graphicx}
-%% Title case settings
+\RequirePackage{ifthen}
+\RequirePackage{setspace}
 \RequirePackage{titlecaps}
+\RequirePackage{titlesec}
+%% Title case settings
 \Addlcwords{a an the as at an by for in of off on per to up via and as but for if nor or so yet be am is are was}
 
 %% Geometry and Margins
