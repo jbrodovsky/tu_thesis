@@ -1,5 +1,6 @@
 {
     "cSpell.ignoreWords": [
+        "Addlcwords",
         "Lamport",
         "Underfull",
         "biblatex",
@@ -10,8 +11,14 @@
         "ight",
         "includegraphics",
         "lipsum",
+        "mydegree",
+        "mydoctype",
+        "myschool",
+        "myuniversity",
+        "newcommand",
         "pdfauthor",
         "setspace",
+        "setstretch",
         "singlespace",
         "subsubsections",
         "susubsubsections",
