@@ -141,7 +141,7 @@
 % \titleformat{command}{format}{label}{sep}{before-code}
 \titleformat{\chapter}[block]
   {\bfseries\filcenter\Large}
-  {\chaptername~\thechapter}
+  {\chaptername~\thechapter\\}
   {.5em}
   {\titlecap}
 %\bfseries\filcenter\Large
