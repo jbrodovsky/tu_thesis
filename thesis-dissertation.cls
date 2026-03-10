@@ -139,10 +139,10 @@
 
 %% Custom Sectioning
 % \titleformat{command}{format}{label}{sep}{before-code}
-\titleformat{\chapter}[block]
+\titleformat{\chapter}[display]
   {\bfseries\filcenter\Large}
-  {\chaptername~\thechapter\\}
-  {.5em}
+  {\chaptername~\thechapter}
+  {0pt}
   {\titlecap}
 %\bfseries\filcenter\Large
 \titleformat{\section}
