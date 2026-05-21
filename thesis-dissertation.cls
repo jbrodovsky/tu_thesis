@@ -124,7 +124,7 @@
 %% Dedication Command
 % Dedication environment should be on a new page, centered vertically and horizontally, and double spaced
 \newenvironment{dedication}{
-  \chapter*{}
+  % \chapter*{}
   \addcontentsline{toc}{chapter}{Dedication}
   \vspace*{\fill}
   \begin{center}
