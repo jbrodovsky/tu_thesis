@@ -42,7 +42,7 @@
     %\g@addto@macro\mydegree{#1}}
 \newcommand{\doctype}[1]{\renewcommand{\mydoctype}{#1}}
 \newcommand{\advisor}[2]{
-    \g@addto@macro\myadvisor{#1, #2 (Advisor)\\}} 
+    \g@addto@macro\myadvisor{#1, Advisory Chair, #2\\}}
 \newcommand{\committeemember}[2]{%
   \g@addto@macro\mycommitteemembers{#1, #2\\}}
 \newcommand{\university}[1]{\renewcommand{\myuniversity}{#1}}
@@ -51,40 +51,44 @@
 \newcommand{\graduateorg}[1]{\renewcommand{\myorg}{#1}}
 
 %% Title Page Command
+% Spacing matches the Graduate School's title page template
+\newlength{\tp@titlewidth} \setlength{\tp@titlewidth}{4.9in}
+\newlength{\tp@rulewidth}  \setlength{\tp@rulewidth}{5.5in}
 \newcommand{\maketitlepage}{%
 \thispagestyle{empty}
 \begin{singlespace}
-  \begin{center}
-    \MakeUppercase{\@title} \\
-    \bigskip 
-    \hrulefill \\
-    \bigskip 
+  {\centering
+    \vspace*{58pt}
+    \parbox{\tp@titlewidth}{\centering\bfseries\MakeUppercase{\@title}}\par
+    \vspace{37pt}
+    \rule{\tp@rulewidth}{0.4pt}\par
+    \vspace{50pt}
     A \mydoctype\\
-    Submitted to the\\
+    Submitted to\\
     \ifthenelse{\equal{\mydepartment}{\relax}}{}{%
       \mydepartment \\
     }
     \ifthenelse{\equal{\myschool}{\relax}}{}{%
       \myschool \\
     }
-    \myuniversity{} \ifthenelse{\equal{\myorg}{\relax}}{}{\myorg{}}
-    \\
-    \bigskip
-    \hrulefill \\
-    \bigskip
-    in Partial Fulfillment \\ 
-    of the Requirements for the Degree of\\
-    {\uppercase{\mydegree}}\\
-    \bigskip
-    \hrulefill \\
-    \bigskip
+    the \myuniversity{} \ifthenelse{\equal{\myorg}{\relax}}{}{\myorg{}}\par
+    \vspace{21pt}
+    \rule{\tp@rulewidth}{0.4pt}\par
+    \vspace{24pt}
+    In Partial Fulfillment\\
+    of the Requirements for the Degree\\
+    \MakeUppercase{\mydegree}\par
+    \vspace{50pt}
+    \rule{\tp@rulewidth}{0.4pt}\par
+    \vspace{18pt}
     by\\
     \@author\\
-    \@date\\
-  \end{center}
-  \vfill
-  Examining Committee Members:\\\\
-  \myadvisor
+    \@date\par
+  }
+  \vspace{52pt}
+  \noindent Examining Committee Members:\par
+  \vspace{14pt}
+  \noindent\myadvisor
   \mycommitteemembers
   \newpage
 
