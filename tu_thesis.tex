@@ -57,29 +57,24 @@
   This is a template for writing a thesis or dissertation using \LaTeX{}. It is designed to help you create a document that meets the formatting requirements of your university. The template includes examples of how to format various sections of your document, including the title page, abstract, acknowledgments, table of contents, list of figures, list of tables, and the main body. It also includes examples of how to format figures, tables, equations, and references. This template is intended to be a starting point for your thesis or dissertation and can be customized to meet your specific needs.
 \end{abstract}
 
+%% Dedication (the Graduate School places it before the acknowledgments)
+\begin{dedication}
+  To anyone and everyone who needs this.
+\end{dedication}
+
 %% Acknowledgments
 \begin{acknowledgments}
   Leslie Lamport, for making \LaTeX{}. James Yu for creating the fantastic LaTeX Workshop Visual Studio Code extension. The Mathematics department of Temple University, for, at the very least, inspiring me to do this.
 \end{acknowledgments}
 
-%% Dedication
-\begin{dedication}
-  To anyone and everyone who needs this.
-\end{dedication}
-
-%% Table of Contents, List of Figures, List of Tables
+%% Table of Contents and Lists (the List of Tables precedes the List of Figures)
 \singlespacing{}
-%% Table of Contents
 \tableofcontents{}
-%% List of Figures
-\listoffigures{}
-%% List of Tables
 \listoftables{}
+\listoffigures{}
 
-%% Main Body
-\newpage{}
-\pagenumbering{arabic}
-\doublespacing{}
+%% Main Body: Arabic page numbers, double spacing, and the "CHAPTER" label in the ToC
+\mainmatter
 
 %% Chapters
 \chapter{Introduction}
@@ -280,13 +275,20 @@ Paragraph text continues on the same line of the paragraph. Period should be inc
 
 %% Bibliography
 % \nocite{*}
-\printbibliography{}
+% \backmatter separates the bibliography from the chapters in the table of contents.
+% Entries are single spaced within and double spaced between, as the Graduate School requires.
+\backmatter
+\begingroup
+\singlespacing
+\setlength{\bibitemsep}{\baselineskip}
+\printbibliography[heading=bibintoc]
+\endgroup
+\doublespacing
 
 %% Appendices
 \appendix
-\renewcommand\chaptername{Appendix} % Converts from Chapter A to Appendix A
 \chapter{Appendix Formatting}
-Appendices are for including additional material that is not essential to the main body of the document, but is still relevant. This can include things like additional figures, tables, or code snippets. Appendices are numbered with letters (e.g. A, B, C, etc.) and are formatted like chapters. The \verb|\appendix| command will automatically change the chapter numbering to letters. To change the chapter names from ``chapter'' to ``appendix'' use \verb|\renewcommand{\chaptername}{Appendix}|. This line is included in the source template file right after the \verb|\appendix| command.
+Appendices are for including additional material that is not essential to the main body of the document, but is still relevant. This can include things like additional figures, tables, or code snippets. Appendices are numbered with letters (e.g. A, B, C, etc.) and are formatted like chapters. The \verb|\appendix| command will automatically change the chapter numbering to letters and the heading label from ``CHAPTER'' to ``APPENDIX''. In the table of contents, appendices are listed by letter and title under an ``APPENDICES'' label, without their sections.
 \section{Appendix Section}
 Appendices can have sections, subsections, and subsubsections just like the main body of the document. The only difference is that the chapter number is replaced with a letter (e.g. A, B, C, etc.). The section numbers are still numbered as they are in the main body of the document (e.g. A.1, A.2, etc.).
 \subsection{Appendix Subsection}
