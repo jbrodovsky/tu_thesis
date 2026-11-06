@@ -26,6 +26,11 @@
 %% Line spacing
 \setstretch{2}
 
+%% Keep text inside the margins: when a paragraph has no acceptable line
+%% breaks (e.g. hyphenated compounds, long URLs), allow a little extra
+%% interword stretch instead of letting a line run into the right margin.
+\setlength{\emergencystretch}{3em}
+
 %% Title and Document Information
 \newcommand{\mydegree}{\relax}
 \newcommand{\mydoctype}{\relax}
