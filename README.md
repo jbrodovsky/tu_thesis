@@ -20,6 +20,11 @@ The goals of this project are simple:
 - Automatic formating of the committee members and their roles through the `\advisor` and `\committeemember` commands
 - Automatic generation of the title page, abstract, acknowledgements, and table of contents, list of figures, and list of tables
 - Automatic formatting of the bibliography and citations using BibTeX
+- Chapter, appendix, and front matter headings in the Graduate School format: boldface, ALL CAPITALS, centered at the 1-inch top margin
+- Table of Contents and List of Tables/Figures/Algorithms in the Graduate School format (Appendix G1): "Page" column label, leader dots, chapter titles in capitals, ½-inch indents per heading level, turnover lines kept ½ inch clear of page numbers, and CHAPTER, BIBLIOGRAPHY and APPENDICES groupings
+- `\mainmatter` (switches to Arabic page numbers and double spacing) and `\backmatter` (before the bibliography) mark the document divisions for the table of contents
+
+Captions listed in the Lists must match the captions in the text exactly. When a caption uses a short list title (`\caption[short]{long}`), start the long caption with the short title, e.g. `\caption[Title]{Title. Further explanation.}`.
 
 ## Usage
 
